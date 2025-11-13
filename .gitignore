@@ -1,0 +1,49 @@
+# Node modules
+node_modules/
+
+# Build output
+dist/
+dist-ssr/
+*.local
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Editor directories and files
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Local env files
+.env
+.env.local
+.env.*.local
+
+# TypeScript cache
+*.tsbuildinfo
+
+# Optional caches
+.eslintcache
+.stylelintcache
+
+# Mac system files
+.DS_Store
+
+# Windows system files
+Thumbs.db
+
+# Vite-generated cache
+.cache/
+.vite/
+
+# Test coverage
+coverage/
+*.lcov
