@@ -1,0 +1,348 @@
+:root {
+  --bg: #f5f7fa;
+  --bg-alt: #eef1f6;
+  --card: #ffffff;
+  --text: #1a1f36;
+  --text-muted: #6b7280;
+  --accent: #2563eb;
+  --accent-light: #dbeafe;
+  --danger: #dc2626;
+  --success: #2ecc71;
+  --radius: 12px;
+  --shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+/* Global */
+* {
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  margin: 0;
+  height: 100%;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+  background: var(--bg);
+  color: var(--text);
+}
+
+body {
+  overflow-x: hidden;
+}
+
+/* Layout */
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.topbar {
+  background: var(--card);
+  padding: 16px 28px;
+  box-shadow: var(--shadow);
+  display: flex;
+  align-items: center;
+}
+
+.topbar h1 {
+  margin: 0;
+  font-size: 1.35rem;
+  font-weight: 600;
+}
+
+.content {
+  padding: 28px;
+  flex: 1;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer {
+  text-align: center;
+  padding: 18px;
+  color: var(--text-muted);
+  background: var(--card);
+  font-size: 0.9rem;
+  box-shadow: 0 -2px 8px rgba(0,0,0,0.03);
+}
+
+/* Navigation */
+.nav {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 22px;
+  flex-wrap: wrap;
+}
+
+.nav-btn {
+  background: var(--card);
+  padding: 10px 18px;
+  border-radius: var(--radius);
+  border: 1px solid #e5e7eb;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: 0.18s ease;
+}
+
+.nav-btn:hover {
+  background: var(--bg-alt);
+}
+
+.nav-btn.active {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+  box-shadow: 0 4px 14px rgba(37,99,235,0.25);
+}
+
+/* Forms */
+.form {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.form input,
+.form select {
+  padding: 10px;
+  border-radius: var(--radius);
+  border: 1px solid #d4d7de;
+  min-width: 200px;
+  font-size: 0.95rem;
+  background: var(--card);
+}
+
+/* Focus effect */
+.form input:focus,
+.form select:focus,
+.filter-bar select:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-light);
+}
+
+/* Buttons */
+button.primary {
+  background: var(--accent);
+  color: white;
+  padding: 10px 14px;
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+button.primary:hover {
+  background: #1e4fd1;
+}
+
+button.secondary {
+  background: #f3f4f6;
+  padding: 10px 14px;
+  border-radius: var(--radius);
+  border: none;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+button.secondary:hover {
+  background: #e5e7eb;
+}
+
+button.danger {
+  background: var(--danger);
+  color: white;
+  padding: 10px 14px;
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+button.danger:hover {
+  background: #b91c1c;
+}
+
+/* Validation text */
+.error {
+  color: var(--danger);
+  font-size: 0.9rem;
+}
+
+.success {
+  color: var(--success);
+  font-size: 0.9rem;
+}
+
+/* List */
+.list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.list-item {
+  background: var(--card);
+  padding: 14px 18px;
+  border-radius: var(--radius);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #eceff3;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+  transition: 0.15s ease;
+}
+
+.list-item:hover {
+  transform: scale(1.01);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+}
+
+.item-actions {
+  display: flex;
+  gap: 8px;
+}
+
+/* Muted Text */
+.muted {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+/* Modal */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.32);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(2px);
+  z-index: 1500;
+}
+
+.modal-body {
+  background: white;
+  padding: 24px;
+  border-radius: var(--radius);
+  min-width: 260px;
+  box-shadow: var(--shadow);
+  animation: fadeIn 0.3s ease;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+/* Dashboard */
+.dashboard-grid {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.dashboard-card {
+  background: var(--card);
+  padding: 26px;
+  border-radius: var(--radius);
+  text-align: center;
+  box-shadow: var(--shadow);
+  transition: 0.18s ease;
+}
+
+.dashboard-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+.dashboard-card .value {
+  font-size: 2.2rem;
+  margin-top: 10px;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+/* Toast (Blue default for ADD) */
+.toast {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  color: #fff;
+  background: var(--accent);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  z-index: 2000;
+  animation: toastSlide 1.7s ease forwards;
+}
+
+/* Green toast (UPDATED) */
+.success-toast {
+  background: var(--success) !important;
+}
+
+/* Red toast (DELETED) */
+.toast-danger {
+  background: var(--danger) !important;
+}
+
+/* Toast animation */
+@keyframes toastSlide {
+  0% { opacity: 0; transform: translateX(30px); }
+  15% { opacity: 1; transform: translateX(0); }
+  85% { opacity: 1; transform: translateX(0); }
+  100% { opacity: 0; transform: translateX(30px); }
+}
+
+/* Filter bar */
+.filter-bar {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.filter-bar select,
+.page-section select {
+  background: var(--card);
+  border: 1px solid #d4d7de;
+  padding: 10px 12px;
+  border-radius: var(--radius);
+  font-size: 0.95rem;
+  cursor: pointer;
+  min-width: 220px;
+}
+
+/* RESET button style */
+.filter-bar button.secondary {
+  background: #e2e8f0 !important;
+  border: 1px solid #cbd5e1;
+  color: #1e293b;
+  font-weight: 500;
+  padding: 9px 14px;
+  border-radius: var(--radius);
+  transition: 0.2s ease;
+}
+
+.filter-bar button.secondary:hover {
+  background: #cbd5e1 !important;
+}
+
+/* Smooth fade-in */
+.page-section {
+  animation: fadeIn 0.35s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
